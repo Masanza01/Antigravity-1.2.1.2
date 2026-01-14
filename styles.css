@@ -163,6 +163,8 @@ ul {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--white);
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .logo .highlight {
@@ -465,6 +467,10 @@ ul {
         font-size: 40px;
     }
 
+    .logo {
+        font-size: 1.2rem;
+    }
+
     .hero-cta {
         flex-direction: column;
         width: 100%;
@@ -544,6 +550,10 @@ ul {
         padding: 20px;
     }
 
+    .logo {
+        font-size: 1rem;
+    }
+
     /* Client List 2 Col */
     .clients-content {
         display: grid;
@@ -580,7 +590,7 @@ ul {
 .navbar .logo {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    /* Removed gap to prevent spacing issues on mobile */
     /* font-size: 0; Removed to allow text display */
 }
 

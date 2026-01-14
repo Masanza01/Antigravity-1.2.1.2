@@ -228,7 +228,7 @@
             <p class="cta-text text-center">Contact us today to discuss your business needs.</p>
 
             <div class="contact-form-container">
-                <form class="contact-form">
+                <form id="contactForm" class="contact-form">
                     <!-- 1. Client Name -->
                     <div class="form-group full-width">
                         <label for="name">Full name <span style="color: var(--secondary-color)">*</span></label>
@@ -295,6 +295,8 @@
                         <button type="submit" class="btn btn-secondary btn-large">Start the conversation</button>
                     </div>
                 </form>
+                <!-- Form Status Messages -->
+                <div id="formStatus" style="margin-top: 20px; text-align: center;"></div>
             </div>
         </div>
     </section>
@@ -318,7 +320,17 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Connect</h4>
+                <h4>Stay Updated</h4>
+                <p style="margin-bottom: 15px; color: var(--text-secondary); font-size: 0.9rem;">Subscribe to our
+                    newsletter for insights and updates.</p>
+                <form id="newsletterForm" style="margin-bottom: 15px;">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email" required
+                        style="width: 100%; padding: 12px; border: 1px solid #233554; background: var(--bg-dark); color: var(--white); border-radius: 5px; margin-bottom: 10px; font-size: 0.95rem;">
+                    <button type="submit" class="btn btn-secondary"
+                        style="width: 100%; padding: 12px;">Subscribe</button>
+                </form>
+                <div id="newsletterStatus" style="margin-bottom: 15px; font-size: 0.9rem;"></div>
+                <h4 style="margin-top: 20px;">Connect</h4>
                 <div class="social-links">
                     <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
@@ -330,6 +342,11 @@
         </div>
     </footer>
 
+    <!-- Supabase Client Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Supabase Configuration -->
+    <script src="supabase-config.js"></script>
+    <!-- Custom Scripts -->
     <script src="script.js"></script>
 </body>
 

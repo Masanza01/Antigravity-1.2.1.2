@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Apply fade-in animation to service cards and sections
     const animatedElements = document.querySelectorAll('.service-card, .section-title, .client-item, .feature');
-    
+
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -45,4 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Smooth scroll for anchor links is handled by CSS (html { scroll-behavior: smooth; })
+
+    // Accordion Functionality
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const accordionItem = header.parentElement;
+            const content = accordionItem.querySelector('.accordion-content');
+
+            // Toggle current item
+            accordionItem.classList.toggle('active');
+
+            if (accordionItem.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+        });
+    });
 });

@@ -580,5 +580,87 @@ ul {
 .navbar .logo {
     display: flex;
     align-items: center;
+    gap: 0.4rem;
     /* font-size: 0; Removed to allow text display */
+}
+
+/* Services Accordion Styles */
+.services-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    background: #112240;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.accordion-item:hover {
+    border-color: var(--secondary-color);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px 25px;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: color 0.3s;
+    text-align: left;
+}
+
+.accordion-header:hover {
+    color: var(--secondary-color);
+}
+
+.accordion-header span {
+    display: flex;
+    align-items: center;
+}
+
+.accordion-icon {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    color: var(--secondary-color);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background: #0a192f;
+    /* Slightly darker inner background */
+}
+
+.accordion-content p {
+    padding: 20px 25px;
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    border-top: 1px solid #233554;
+}
+
+/* Active State for Accordion */
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+    /* Turn + into x */
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px;
+    /* Arbitrary large height to allow content to show */
 }

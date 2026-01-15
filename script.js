@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // Insert data into Supabase
-                const { data, error } = await supabase
+                const { data, error } = await supabaseClient
                     .from('contact_submissions')
                     .insert([formData]);
 
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             newsletterStatus.innerHTML = '';
 
             try {
-                const { data, error } = await supabase
+                const { data, error } = await supabaseClient
                     .from('newsletter_subscriptions')
                     .insert([{ email: emailInput.value }]);
 
